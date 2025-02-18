@@ -41,9 +41,21 @@
   // Add Theme Support
   add_theme_support("post-thumbnails");
   add_theme_support("post-formats", array("video", "image", "gallery"));
+  add_theme_support("html5", array("search-form"));
+
 
   // after theme setup
   function custom_theme_setup() {
     add_theme_support('title-tag');
   }
   add_action('after_setup_theme', 'custom_theme_setup');
+
+    // Generate Title Function
+    function generate_heading($heading, $desc, $style = "title-one") {
+      $output = "";
+      $output .= "<div class='title-box'>";
+        $output .= "<h2 class='$style'>$heading</h2>";
+        $output .= "<p class='description'>$desc</p>";
+      $output .= "</div>";
+      return $output;
+    }

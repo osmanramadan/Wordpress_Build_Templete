@@ -6,11 +6,12 @@
               </div>
               <div class="col-sm-6">
               <div class="social-icons">
-                <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
-                <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="youtube"><i class="fa-brands fa-youtube"></i></a>
+              <a href="/" class="facebook"><i class="fa-brands fa-facebook"></i><span class="sr-only">Facebook</span></a>
+              <a href="/" class="twitter"><i class="fa-brands fa-twitter"></i><span class="sr-only">Twitter</span></a>
+              <a href="/" class="linkedin"><i class="fa-brands fa-linkedin"></i><span class="sr-only">LinkedIn</span></a>
+              <a href="/" class="instagram"><i class="fa-brands fa-instagram"></i><span class="sr-only">Instagram</span></a>
+              <a href="/" class="youtube"><i class="fa-brands fa-youtube"></i><span class="sr-only">YouTube</span></a>
+
               </div>
           </div>
           </div>
