@@ -173,18 +173,26 @@
 
 .homepage .books {
   background-color: white;
-  margin-top:60px;
-  padding:10px;
-  margin-bottom:180px !important
-} 
+  margin-top: 60px;
+  padding: 10px;
+  margin-bottom: 180px !important;
+  display: flex;
+  justify-content: center;
+}
+
+.homepage .books .single-post {
+  max-width: 50%;
+  margin: auto;
+  text-align: center;
+}
 
 .homepage .single-post img {
   max-width: 60%;
   height: 172px;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+  display: block;
+  margin: 0 auto; /* Centers the image */
 }
+
 /* 0-0 */
 .homepage .multiple-posts {
   padding-left: 25px;
@@ -238,7 +246,7 @@
 @media (min-width: 768px) {
   .homepage .random-posts .posts-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(700px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
     gap: 10px;
 
   }
@@ -291,33 +299,36 @@
   color: var(--main-color);
 }
 
-
+/* ************************************************************** */
 @media (min-width: 768px) {
-  .homepage .games .games-container {
+  .homepage .books .books-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 20px;
   }
 }
-.homepage .games .game {
+.homepage .books .book {
   background-color: white;
+  max-width:90%;
   position: relative;
+  margin-left:20px;
   margin-bottom:100px
 }
-.homepage .games .game img {
+.homepage .books .book img {
   max-width: 100%;
-  height: 200px;
+  height: 140px;
+  /* margin:0 auto; */
   transition: 0.3s;
 }
-.homepage .games .game .main-link {
+.homepage .books .book .main-link {
   display: block;
   overflow: hidden;
 }
-.homepage .games .game img:hover {
+.homepage .books .book img:hover {
   transform: scale(1.2) rotate(5deg);
   opacity: 0.8;
 }
-.homepage .games .game .id {
+.homepage .books .book .id {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -327,7 +338,7 @@
   font-weight: bold;
   border-radius: 5px;
 }
-.homepage .games .game .comments {
+.homepage .books .book .comments {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -337,23 +348,23 @@
   font-weight: bold;
   border-radius: 5px;
 }
-.homepage .games .game .info {
+.homepage .books .book .info {
   padding: 20px;
 }
-.homepage .games .game .info a {
+.homepage .books .book.info a {
   text-decoration: none;
   color: black;
   transition: 0.3s;
   font-size: 22px;
   font-weight: bold;
 }
-.homepage .games .game .info a:hover {
+.homepage .books .book .info a:hover {
   color: var(--main-color);
 }
-.homepage .games .game .info .excerpt {
+.homepage .books .book .info .excerpt {
   color: #777;
 }
-.homepage .games .game .info .data {
+.homepage .books .book .info .data {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -365,12 +376,12 @@
   padding-bottom: 10px;
   color: #666;
 }
-.homepage .games .game .info .tags {
+.homepage .books .book .info .tags {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
 }
-.homepage .games .game .info .tags a {
+.homepage .books .book .info .tags a {
   padding: 2px 10px;
   background-color: #eee;
   color: #666;
@@ -379,10 +390,188 @@
   transition: 0.3s;
   font-size: 14px;
 }
-.homepage .games .game .info .tags a:hover {
+.homepage .books .book .info .tags a:hover {
   background-color: var(--main-color);
   color: white;
 }
+
+
+
+.homepage .books .book .author-avatar {
+  position: absolute; /* Ensures it stays positioned inside .book */
+  top: 80px;
+  left: 30px; /* Default position for larger screens */
+  width: 100%; /* Ensures centering logic works */
+  text-align: center; /* Centers inline elements like img */
+}
+
+.homepage .books .book .author-avatar img {
+  border-radius: 50%;
+  height: 80px;
+  width: 80px;
+  border: 2px solid white;
+  position: relative; /* Set relative positioning for better centering */
+}
+
+/* Center avatar in small screens */
+@media (min-width: 768px) {
+  .homepage .books .book .author-avatar {
+    left: 0;
+    top: 50px;
+  }
+
+  .homepage .books .book .author-avatar img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+.homepage .games .game .info .company {
+  height: 30px;
+  margin-top: 5px;
+  color: #777;
+}
+.homepage .games .game .info .company span {
+  font-weight: bold;
+}
+
+/* Start Navbar */
+
+
+.navbar-nav .nav-link {
+  color: white;
+  transition: 0.3s;
+  padding: 15px 20px !important;
+}
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show,
+.navbar-nav .nav-link:focus,
+.navbar-nav .nav-link:hover {
+  background-color: #212529 !important;
+}
+.dropdown-toggle::after {
+  position: relative;
+  top: 2px;
+  left: 3px;
+}
+.navbar-nav .dropdown-menu {
+  min-width: 260px;
+  top: calc(100% - 3px);
+  border-radius: 0;
+  border: none;
+  padding: 0;
+  background-color: #212529;
+}
+.navbar-nav .dropdown-menu .dropdown-item {
+  padding: 15px;
+  border-radius: 0;
+  color: white;
+  transition: 0.3s;
+}
+.navbar-nav .dropdown-menu .dropdown-item:focus,
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+  background-color:#212529
+  color:var(--main-color);
+  padding-left: 18px;
+}
+.navbar-nav li:last-child .dropdown-menu {
+  right: 0;
+  left: auto;
+}
+/* End Navbar */
+
+/* Start Tag Page */
+.tag-page .head {
+  background-color: white;
+  padding: 40px;
+  text-align: center;
+  border-bottom: 2px solid var(--main-color);
+  margin-bottom: 20px;
+}
+.tag-page .head h1 {
+  font-weight: bold;
+}
+.tag-page .tag-cloud {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+}
+.tag-page .tag-cloud h3 {
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+.tag-page .tag-cloud div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.tag-page .tag-cloud a {
+  font-size: 16px !important;
+  background-color: #eee;
+  padding: 2px 10px;
+  text-decoration: none;
+  border-radius: 6px;
+  color: black;
+  transition: 0.3s;
+}
+.tag-page .tag-cloud a:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+.tag-page .post {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 20px;
+  background-color: white;
+  padding: 20px;
+}
+@media (max-width: 575px) {
+  .tag-page .post {
+    flex-direction: column;
+  }
+}
+.tag-page .post .image {
+  flex: 1;
+}
+.tag-page .post .image img {
+  max-width: 100%;
+  height: 150px;
+}
+.tag-page .post .info {
+  flex: 1;
+}
+.tag-page .post .info .cats a {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  transition: 0.3s;
+}
+.tag-page .post .info .cats a:hover {
+  color: var(--main-color);
+}
+.tag-page .post .post-title {
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  transition: 0.3s;
+}
+.tag-page .post .post-title:hover {
+  color: var(--main-color);
+}
+.tag-page .post .date {
+  font-size: 14px;
+  color: #999;
+  margin-top: 5px;
+  display: block;
+}
+.tag-page .post .excerpt {
+  margin-top: 5px;
+  color: #777;
+}
+/* End Tag Page */
+
 
 /* End Homepage */
 
@@ -432,16 +621,256 @@
 .search-page .search-results .result .categories a:hover {
   color: var(--main-color-alt);
 }
+
+/* start stats */
+.stats {
+  background-color: white;
+  padding:50px
+}
+.stats .stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+.stats .stats-container .stat {
+  text-align: center;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #fbfbfb;
+  box-shadow: 0 0 10px rgb(204 204 204 / 50%);
+  flex: 1;
+  color: #666;
+  font-size: 18px;
+  margin: 10px;
+}
+.stats .stats-container .stat img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 20px;
+  position: relative;
+  animation: up_and_down 2s ease-in-out infinite;
+}
+.stats .stats-container .stat.second img {
+  animation-delay: 1s;
+}
+.stats .stats-container .stat .count {
+  display: block;
+  font-size: 60px;
+  color: black;
+  font-weight: bold;
+}
+@keyframes up_and_down {
+  0%,
+  100% {
+    top: 3px;
+  }
+  50% {
+    top: -3px;
+  }
+}
+
+/* end stats */
+
+/* start cats-stats  */
+.cats-stats .stats-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding: 50px;
+}
+.cats-stats .stat {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 18px;
+  background-color: white;
+  position: relative;
+}
+.cats-stats .stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.cats-stats .stat:hover::before {
+  width: 90%;
+  height: 90%;
+  left: 5%;
+  top: 5%;
+}
+.cats-stats .stat:first-child {
+  color: #f44336;
+  border-color: #f44336;
+}
+.cats-stats .stat:nth-child(2) {
+  color: #3f51b5;
+  border-color: #3f51b5;
+}
+.cats-stats .stat:nth-child(3) {
+  color: #4caf50;
+  border-color: #4caf50;
+}
+.cats-stats .stat:nth-child(4) {
+  color: #795548;
+  border-color: #795548;
+}
+.cats-stats .stat i {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.cats-stats .stat .count {
+  display: block;
+  font-weight: bold;
+  margin-top: 10px;
+}
+/* End cats-stats */
+/* Start Category */
+.cat-head {
+  text-align: center;
+  padding: 40px 0;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+.cat-head h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+.cat-head .desc {
+  color: #666;
+  font-size: 18px;
+}
+.cat img{
+  height:140px
+}
+.sidebar {
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+/* End Category */
+
+/* Start newsletter  */
+
+.newsletter {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background: url("../assets/images/newsletter.jpg") no-repeat;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+}
+.newsletter::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* background-color: var(--main-color); */
+  opacity: 0.9;
+}
+.newsletter .container {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+.newsletter h2 {
+  font-weight: bold;
+  font-size: 40px;
+}
+.newsletter p {
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+.newsletter form {
+  margin: 20px auto;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.newsletter form input[type="email"] {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  position: relative;
+  left: 20px;
+  width: 100%;
+}
+.newsletter form input[type="submit"] {
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  position: relative;
+  left: -20px;
+  background-color: var(--main-color-alt);
+  color: white;
+  width: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.newsletter form input[type="submit"]:hover {
+  background-color: var(--main-color);
+  border-color: white;
+}
+
+/* end newsletter  */
 /* End Search Page */
 
 /* Start Footer */
-  footer {
+footer {
     padding: 20px;
     margin-top:30px;
-    position: fixed;
+    /* position: fixed;
     bottom: 0;
-    width:100%
+    width:100% */
   }
+
+footer .footer-links {
+  padding: 20px 0;
+  border-bottom: 1px solid #444;
+  margin-bottom: 20px;
+}
+footer .footer-links .description {
+  margin-top: 20px;
+  color: #ddd;
+  line-height: 1.8;
+}
+footer .footer-links h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+footer .footer-links ul li:not(:last-child) {
+  margin-bottom: 10px;
+  border-bottom: 1px solid #666;
+  padding-bottom: 10px;
+}
+footer .footer-links ul li a {
+  color: #777;
+  text-decoration: none;
+}
+footer .footer-links ul li a:hover {
+  color: var(--main-color);
+}
   footer .social-icons {
     display: flex;
     justify-content: flex-end;
