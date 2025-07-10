@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="homepage">
-  <div class="section introduction mt-4">
+   <div class="section introduction mt-4">
   <div class="container">
 
   <?php echo generate_heading("welcome to" .' '. get_bloginfo("name"),'Every New With Us',"title-three");?>
