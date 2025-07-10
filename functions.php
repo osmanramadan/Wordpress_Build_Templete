@@ -8,8 +8,6 @@
     wp_enqueue_style("slick", get_template_directory_uri() . "/css/slick.css");
     wp_enqueue_style("slick-theme", get_template_directory_uri() . "/css/slick-theme.css");
     wp_enqueue_style("main", get_template_directory_uri() . "/css/main.css", array(),  rand(111, 9999), "all");
-
-
 }
 
   // Add Scripts

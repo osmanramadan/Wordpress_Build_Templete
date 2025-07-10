@@ -108,7 +108,7 @@
         <?php 
           $games_arg = array(
             'posts_per_page' => 6,
-            'category_name' => "books",
+            'category_name' => "games",
           );
           $games = new WP_Query($games_arg);
           if($games->have_posts()) :
